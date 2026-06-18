@@ -45,22 +45,28 @@ else
   "
 fi
 
-# 4. Copy skills and agents
-echo "[4/4] 安装 Skills 和 Agents..."
+# 4. Copy skills, agents, and commands
+echo "[4/4] 安装 Skills、Agents 和 Commands..."
 CLAUDE_DIR="$HOME/.claude"
 SKILLS_DIR="$CLAUDE_DIR/skills"
 AGENTS_DIR="$CLAUDE_DIR/agents"
+COMMANDS_DIR="$CLAUDE_DIR/commands"
 
-mkdir -p "$SKILLS_DIR" "$AGENTS_DIR"
+mkdir -p "$SKILLS_DIR" "$AGENTS_DIR" "$COMMANDS_DIR"
 
 for skill in "$PROJECT_DIR"/skills/*.md; do
   cp "$skill" "$SKILLS_DIR/"
-  echo "  ✅ $(basename "$skill")"
+  echo "  ✅ skill: $(basename "$skill")"
 done
 
 for agent in "$PROJECT_DIR"/agents/*.md; do
   cp "$agent" "$AGENTS_DIR/"
-  echo "  ✅ $(basename "$agent")"
+  echo "  ✅ agent: $(basename "$agent")"
+done
+
+for cmd in "$PROJECT_DIR"/.claude/commands/*.md; do
+  cp "$cmd" "$COMMANDS_DIR/"
+  echo "  ✅ command: $(basename "$cmd")"
 done
 
 echo ""
