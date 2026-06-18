@@ -1,5 +1,7 @@
 # Alibaba P3C Claude Code Plugin
 
+[English](README_EN.md) | 中文
+
 <p align="center">
   <strong>阿里巴巴 Java 开发规范 × Claude Code</strong><br>
   让 AI 编码助手自动遵循《阿里巴巴 Java 开发手册（黄山版）》
