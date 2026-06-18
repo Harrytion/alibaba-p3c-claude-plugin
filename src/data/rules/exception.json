@@ -1,0 +1,26 @@
+[
+  {
+    "id": "AvoidReturnInFinallyRule",
+    "name": "finally块中禁止使用return",
+    "severity": "mandatory",
+    "description": "finally 块中不要使用 return 语句。finally 块中的 return 语句会导致方法返回值被覆盖，或导致 try-catch 中的异常被丢弃。",
+    "pmdRule": "AvoidReturnInFinallyRule",
+    "pmdPriority": 1
+  },
+  {
+    "id": "MethodReturnWrapperTypeRule",
+    "name": "方法返回类型为基本类型时，返回值可能为null导致NPE",
+    "severity": "recommended",
+    "description": "方法的返回类型为基本类型时，return 包装类对象可能造成 NPE。反例：public int f() { return Integer }，拆箱操作可能返回 null。",
+    "pmdRule": "WrapperTypeEqualityRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "TransactionMustHaveRollbackRule",
+    "name": "方法抛异常时必须回滚",
+    "severity": "mandatory",
+    "description": "方法 return 之前，如果抛出了异常，必须回滚。",
+    "pmdRule": "TransactionMustHaveRollbackRule",
+    "pmdPriority": 1
+  }
+]

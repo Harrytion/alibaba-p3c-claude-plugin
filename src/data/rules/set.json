@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ClassCastExceptionWithToArrayRule",
+    "name": "ArrayList的subList结果不可强转为ArrayList",
+    "severity": "mandatory",
+    "description": "ArrayList 的 subList 结果不可强转成 ArrayList，否则会抛出 ClassCastException 异常。",
+    "negativeExample": "Integer[] a = (Integer[]) c.toArray();",
+    "positiveExample": "Integer[] b = c.toArray(new Integer[c.size()]);",
+    "pmdRule": "ClassCastExceptionWithToArrayRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "UnsupportedExceptionWithModifyAsListRule",
+    "name": "Arrays.asList返回的List不可修改",
+    "severity": "mandatory",
+    "description": "使用 Arrays.asList() 把数组转换成集合后，不能使用 add/remove/clear 等修改集合的相关方法，否则会抛出 UnsupportedOperationException。",
+    "pmdRule": "UnsupportedExceptionWithModifyAsListRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ClassCastExceptionWithSubListToArrayListRule",
+    "name": "subList结果不可强转为ArrayList",
+    "severity": "mandatory",
+    "description": "ArrayList 的 subList 结果不可强转成 ArrayList。",
+    "negativeExample": "List<String> test = (ArrayList<String>) list.subList(0, 1);",
+    "positiveExample": "List<String> list2 = new ArrayList<String>(list.subList(0, 1));",
+    "pmdRule": "ClassCastExceptionWithSubListToArrayListRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ConcurrentExceptionWithModifyOriginSubListRule",
+    "name": "subList使用时注意修改原列表",
+    "severity": "mandatory",
+    "description": "在 subList 场景中，高度注意对原集合元素的增加或删除，均会导致子列表的遍历、增加或删除产生 ConcurrentModificationException 异常。",
+    "pmdRule": "ConcurrentExceptionWithModifyOriginSubListRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "DontModifyInForeachCircleRule",
+    "name": "foreach内禁止remove/add元素",
+    "severity": "mandatory",
+    "description": "不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator 方式，如果并发操作，需要对 Iterator 对象加锁。",
+    "positiveExample": "Iterator<String> it = a.iterator();\nwhile (it.hasNext()) {\n  String temp = it.next();\n  if (deleteCondition) { it.remove(); }\n}",
+    "pmdRule": "DontModifyInForeachCircleRule",
+    "pmdPriority": 1
+  },
+  {
+    "id": "CollectionInitShouldAssignCapacityRule",
+    "name": "集合初始化时指定初始容量",
+    "severity": "recommended",
+    "description": "集合初始化时，尽量指定集合初始值大小。",
+    "negativeExample": "Map<String, String> map = new HashMap<String, String>();",
+    "positiveExample": "Map<String, String> map = new HashMap<String, String>(16);",
+    "pmdRule": "CollectionInitShouldAssignCapacityRule",
+    "pmdPriority": 3
+  }
+]

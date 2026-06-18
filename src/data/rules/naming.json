@@ -1,0 +1,104 @@
+[
+  {
+    "id": "ClassNamingShouldBeCamelRule",
+    "name": "类名使用UpperCamelCase风格",
+    "severity": "mandatory",
+    "description": "类名使用 UpperCamelCase 风格，必须遵从驼峰形式，但以下情形例外：DO / BO / DTO / VO / AO / PO / UID 等。",
+    "positiveExample": "MarcoPolo / UserDO / HtmlDTO / XmlService / TcpUdpDeal / TaPromotion",
+    "negativeExample": "macroPolo / UserDo / HTMLDto / XMLService / TCPUDPDeal / TAPromotion",
+    "pmdRule": "ClassNamingShouldBeCamelRule",
+    "pmdPriority": 3
+  },
+  {
+    "id": "AbstractClassShouldStartWithAbstractNamingRule",
+    "name": "抽象类命名使用Abstract或Base开头",
+    "severity": "mandatory",
+    "description": "抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类命名以它要测试的类的名称开始，以 Test 结尾。",
+    "positiveExample": "abstract class AbstractActionDemo {}",
+    "pmdRule": "AbstractClassShouldStartWithAbstractNamingRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ExceptionClassShouldEndWithExceptionRule",
+    "name": "异常类命名使用Exception结尾",
+    "severity": "mandatory",
+    "description": "异常类命名使用 Exception 结尾。",
+    "positiveExample": "public class CacheDemoException extends Exception {}",
+    "pmdRule": "ExceptionClassShouldEndWithExceptionRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "TestClassShouldEndWithTestNamingRule",
+    "name": "测试类命名以Test结尾",
+    "severity": "mandatory",
+    "description": "测试类命名以它要测试的类的名称开始，以 Test 结尾。",
+    "positiveExample": "public class DemoTest {}",
+    "pmdRule": "TestClassShouldEndWithTestNamingRule",
+    "pmdPriority": 3
+  },
+  {
+    "id": "LowerCamelCaseVariableNamingRule",
+    "name": "方法名、参数名、成员变量、局部变量使用lowerCamelCase",
+    "severity": "mandatory",
+    "description": "方法名、参数名、成员变量名、局部变量名都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。",
+    "positiveExample": "localValue / getHttpMessage() / inputUserId",
+    "pmdRule": "LowerCamelCaseVariableNamingRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "AvoidStartWithDollarAndUnderLineNamingRule",
+    "name": "标识符不能以下划线或美元符号开始和结束",
+    "severity": "mandatory",
+    "description": "代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。",
+    "negativeExample": "_name / __name / $Object / name_ / name$ / Object$",
+    "pmdRule": "AvoidStartWithDollarAndUnderLineNamingRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ConstantFieldShouldBeUpperCaseRule",
+    "name": "常量命名全部大写，单词间用下划线隔开",
+    "severity": "mandatory",
+    "description": "常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。",
+    "positiveExample": "MAX_STOCK_COUNT",
+    "negativeExample": "MAX_COUNT",
+    "pmdRule": "ConstantFieldShouldBeUpperCaseRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ServiceOrDaoClassShouldEndWithImplRule",
+    "name": "Service和DAO类命名使用Impl后缀",
+    "severity": "mandatory",
+    "description": "Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用 Impl 的后缀与接口区别。",
+    "positiveExample": "public class DemoServiceImpl implements DemoService {}",
+    "pmdRule": "ServiceOrDaoClassShouldEndWithImplRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "PackageNamingRule",
+    "name": "包名统一使用小写",
+    "severity": "mandatory",
+    "description": "包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。",
+    "positiveExample": "com.alibaba.open.util",
+    "pmdRule": "PackageNamingRule",
+    "pmdPriority": 3
+  },
+  {
+    "id": "BooleanPropertyShouldNotStartWithIsRule",
+    "name": "布尔类型变量不加is前缀",
+    "severity": "mandatory",
+    "description": "在 POJO 类中，布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误。",
+    "negativeExample": "boolean isSuccess; // 方法名也是 isSuccess()，RPC框架在反向解析时以为属性名是 success",
+    "pmdRule": "BooleanPropertyShouldNotStartWithIsRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "ArrayNamingShouldHaveBracketRule",
+    "name": "数组声明使用类型与中括号紧挨相连的方式",
+    "severity": "mandatory",
+    "description": "中括号是数组类型的一部分，数组定义如下：String[] args。不要使用 String args[] 的方式来定义。",
+    "positiveExample": "String[] a = new String[3];",
+    "negativeExample": "String a[] = new String[3];",
+    "pmdRule": "ArrayNamingShouldHaveBracketRule",
+    "pmdPriority": 3
+  }
+]

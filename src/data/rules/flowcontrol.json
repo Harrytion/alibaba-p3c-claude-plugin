@@ -1,0 +1,36 @@
+[
+  {
+    "id": "SwitchStatementRule",
+    "name": "switch语句必须包含default",
+    "severity": "mandatory",
+    "description": "在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明程序将继续执行到哪一个 case 为止；在一个 switch 块内，都必须包含一个 default 语句并且放在最后，即使它什么代码也没有。",
+    "pmdRule": "SwitchStatementRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "IfElseBracesRule",
+    "name": "if/else/for/while/do语句必须使用大括号",
+    "severity": "mandatory",
+    "description": "在 if/else/for/while/do 语句中必须使用大括号，即使只有一行代码。",
+    "negativeExample": "if (condition) statements;",
+    "pmdRule": "IfElseBracesRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "AvoidComplexConditionRule",
+    "name": "条件表达式避免过于复杂",
+    "severity": "recommended",
+    "description": "在条件表达式中，除常用方法（如 getXxx/isXxx）外，不要使用复杂的表达式，建议使用布尔变量来暂存结果。",
+    "positiveExample": "boolean existed = (file.open(fileName, \"w\") != null) && (...) || (...);\nif (existed) { ... }",
+    "pmdRule": "AvoidComplexConditionRule",
+    "pmdPriority": 3
+  },
+  {
+    "id": "AvoidNegationOperatorRule",
+    "name": "避免使用取反运算符!",
+    "severity": "recommended",
+    "description": "避免使用取反运算符 !，不利于快速理解。一定有正面的表达方式。",
+    "pmdRule": "AvoidNegationOperatorRule",
+    "pmdPriority": 3
+  }
+]

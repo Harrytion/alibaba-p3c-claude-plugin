@@ -1,0 +1,22 @@
+[
+  {
+    "id": "MagicNumberRule",
+    "name": "不允许任何魔法值直接出现在代码中",
+    "severity": "mandatory",
+    "description": "不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。",
+    "negativeExample": "String key = \"Id#taobao_\" + tradeId;",
+    "positiveExample": "private static final String KEY_PREFIX = \"Id#taobao_\";\nString key = KEY_PREFIX + tradeId;",
+    "pmdRule": "UppercaseConstantNamingRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "LongLiteralRule",
+    "name": "long或Long赋值使用大写L",
+    "severity": "mandatory",
+    "description": "long 或者 Long 初始赋值时，必须使用大写的 L，不能是小写的 l，小写容易跟数字 1 混淆，造成误解。",
+    "negativeExample": "Long a = 2l;",
+    "positiveExample": "Long a = 2L;",
+    "pmdRule": "UppercaseConstantNamingRule",
+    "pmdPriority": 2
+  }
+]

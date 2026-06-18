@@ -1,0 +1,60 @@
+[
+  {
+    "id": "WrapperTypeEqualityRule",
+    "name": "包装类对象比较使用equals而非==",
+    "severity": "mandatory",
+    "description": "所有整型包装类对象之间值的比较，全部使用 equals 方法比较。Integer 缓存在 -128 到 127 之间，超出该范围会创建新对象。",
+    "pmdRule": "WrapperTypeEqualityRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "EqualsAvoidNullRule",
+    "name": "equals方法应使用常量或确定不为null的对象调用",
+    "severity": "mandatory",
+    "description": "Object 的 equals 方法容易抛空指针异常，应使用常量或确定不为 null 的对象来调用 equals。",
+    "positiveExample": "\"test\".equals(object);",
+    "negativeExample": "object.equals(\"test\");",
+    "pmdRule": "EqualsAvoidNullRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "PojoMustUseWrapperTypeRule",
+    "name": "POJO类必须使用包装类型",
+    "severity": "mandatory",
+    "description": "所有的 POJO 类属性必须使用包装数据类型。RPC 方法的返回值和参数必须使用包装数据类型。",
+    "pmdRule": "PojoMustUseWrapperTypeRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "PojoNoDefaultValueRule",
+    "name": "POJO类不要给属性设置默认值",
+    "severity": "mandatory",
+    "description": "定义 DO/DTO/VO 等 POJO 类时，不要给属性设置默认值。",
+    "pmdRule": "PojoNoDefaultValueRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "PojoMustOverrideToStringRule",
+    "name": "POJO类必须实现toString方法",
+    "severity": "mandatory",
+    "description": "POJO 类必须写 toString 方法。如果继承了另一个 POJO 类，注意在前面加一下 super.toString。",
+    "pmdRule": "PojoMustOverrideToStringRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "AvoidUseDeprecatedRule",
+    "name": "禁止使用已过时的类或方法",
+    "severity": "mandatory",
+    "description": "禁止使用已过时的类或方法。一旦接口被废弃，接口提供者有义务提供新接口；客户端程序员也有义务了解新实现。",
+    "pmdRule": "AvoidUseDeprecationRule",
+    "pmdPriority": 1
+  },
+  {
+    "id": "OverrideMethodMustHaveOverrideRule",
+    "name": "覆写方法必须加@Override注解",
+    "severity": "mandatory",
+    "description": "从接口或抽象类继承的方法必须加 @Override 注解。",
+    "pmdRule": "MissingOverrideAnnotationRule",
+    "pmdPriority": 1
+  }
+]

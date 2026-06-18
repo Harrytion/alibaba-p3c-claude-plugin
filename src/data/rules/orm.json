@@ -1,0 +1,10 @@
+[
+  {
+    "id": "IbatisMethodQueryForListRule",
+    "name": "iBatis推荐的查询返回类型",
+    "severity": "mandatory",
+    "description": "iBatis 自带的 queryForList(String statementName, int start, int size) 不推荐使用。",
+    "pmdRule": "IbatisMethodQueryForListRule",
+    "pmdPriority": 3
+  }
+]

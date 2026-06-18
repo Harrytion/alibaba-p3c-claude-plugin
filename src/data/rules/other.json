@@ -1,0 +1,63 @@
+[
+  {
+    "id": "AvoidApacheBeanutilsRule",
+    "name": "避免使用Apache Beanutils进行属性拷贝",
+    "severity": "mandatory",
+    "description": "避免使用 Apache Beanutils 进行属性的 copy。由于其使用了反射机制，性能较差。推荐使用 Spring BeanUtils 或 Hutool BeanUtil。",
+    "pmdRule": "AvoidApacheBeanutilsRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "RegexPrecompileRule",
+    "name": "正则表达式必须预编译",
+    "severity": "mandatory",
+    "description": "在使用正则表达式时，利用好其预编译功能，可以有效加快正则匹配速度。不要在方法体内定义 Pattern pattern = Pattern.compile(.);",
+    "positiveExample": "private static final Pattern PATTERN = Pattern.compile(\"regex\");",
+    "pmdRule": "RegexPrecompileRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "MathRandomRule",
+    "name": "获取随机数使用Random对象",
+    "severity": "mandatory",
+    "description": "Math.random() 方法返回 double 值，范围 0<=x<1。如果需要随机整数，不要用 Math.random() 乘以 10 再取整，应该使用 Random 对象的 nextInt 或 nextLong 方法。",
+    "pmdRule": "MathRandomRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "CurrentTimeMillisRule",
+    "name": "获取当前毫秒数使用System.currentTimeMillis",
+    "severity": "mandatory",
+    "description": "获取当前毫秒数不要使用 new Date().getTime()，应该使用 System.currentTimeMillis()。如需更精确时间，使用 System.nanoTime()。",
+    "pmdRule": "CurrentTimeMillisRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "DateFormattingRule",
+    "name": "日期格式化时年份使用小写y",
+    "severity": "mandatory",
+    "description": "日期格式化时，yyyy 表示当天所在的年，而 YYYY 表示 week-based year（JDK7 引入）。跨年时 YYYY 可能返回下一年。大写 M 表示月，小写 m 表示分；大写 H 表示 24 小时制，小写 h 表示 12 小时制。",
+    "positiveExample": "new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");",
+    "negativeExample": "new SimpleDateFormat(\"YYYY-MM-dd HH:mm:ss\"); // 跨年时会出错",
+    "pmdRule": "DateFormattingRule",
+    "pmdPriority": 2
+  },
+  {
+    "id": "MethodLengthRule",
+    "name": "方法总行数不超过80行",
+    "severity": "recommended",
+    "description": "一个方法的总行数（包括方法签名、大括号、代码、注释、空行、回车及任何不可见字符）限制在 80 行以内。",
+    "pmdRule": "MethodLengthRule",
+    "pmdPriority": 3
+  },
+  {
+    "id": "StringBuilderInLoopRule",
+    "name": "循环体内使用StringBuilder的append方法",
+    "severity": "recommended",
+    "description": "循环体内，字符串的连接方式，使用 StringBuilder 的 append 方法进行扩展。",
+    "negativeExample": "String str = \"start\";\nfor(int i=0; i<100; i++) { str = str + \"hello\"; }",
+    "positiveExample": "StringBuilder sb = new StringBuilder(\"start\");\nfor(int i=0; i<100; i++) { sb.append(\"hello\"); }",
+    "pmdRule": "StringBuilderInLoopRule",
+    "pmdPriority": 3
+  }
+]
