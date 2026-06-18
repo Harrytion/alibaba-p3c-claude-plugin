@@ -1,0 +1,27 @@
+{
+  "name": "alibaba-p3c-claude-plugin",
+  "version": "0.1.0",
+  "description": "Alibaba Java Coding Guidelines (P3C) plugin for Claude Code",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "p3c-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "download-pmd": "bash scripts/download-pmd.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.0",
+    "fast-xml-parser": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
