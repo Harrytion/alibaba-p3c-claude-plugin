@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"node -e \\\"\\nconst { parsePmdXml } = require('./dist/services/rule-parser.js');\\nconst xml = \\\\`<?xml version='1.0' encoding='UTF-8'?>\\n<pmd xmlns='http://pmd.sourceforge.net/report/2.0.0'\\...",
+  "error": "Exit code 1\nnode:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module './dist/services/rule-parser.js'\nRequire stack:\n- /Users/jackrams/IdeaProjects/plugins/alibaba-p3c-claude-plugin/[eval]\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n   ...",
+  "timestamp": "2026-06-18T07:37:06.771Z",
+  "retry_count": 1
+}
