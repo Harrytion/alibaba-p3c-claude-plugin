@@ -33,7 +33,7 @@
 ### 一键安装
 
 ```bash
-git clone https://github.com/yourname/alibaba-p3c-claude-plugin.git
+git clone https://github.com/Harrytion/alibaba-p3c-claude-plugin.git
 cd alibaba-p3c-claude-plugin
 npm install
 bash scripts/install.sh
@@ -269,7 +269,7 @@ npm run test:watch
 
 ## 📄 License
 
-[Apache 2.0](LICENSE)
+[MIT](LICENSE)
 
 ## 🙏 致谢
 
